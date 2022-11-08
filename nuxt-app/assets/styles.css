@@ -1,0 +1,20 @@
+.component-option{
+    outline: solid gray;
+    width: fit-content;
+    outline-width: 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+  }
+ 
+  .component-option:hover{
+     background-color: lightblue;
+     cursor: pointer;
+  }
+ 
+  .component-option:active{
+   color: white;
+  }

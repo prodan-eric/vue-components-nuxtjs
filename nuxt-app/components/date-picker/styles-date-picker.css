@@ -1,0 +1,121 @@
+:root{
+    --textColor: black;
+    --onHover: #d3d3d3;
+    --onSelectionHover: #78abed;
+    --onLightSelectionHover: #add8e6;
+    --onSelection: #2776dd;
+    --innerTextColor: black;
+    --onSelectionHoverText: #ffffff;
+    --unhighlighted: #808080;
+    --hardUnhighlighted: #6d6d6d;
+    --lightOutline: #d3d3d3;
+    --generalBackground: #ffffff;
+    --clock: url('https://cdn-icons-png.flaticon.com/512/8112/8112820.png');
+  }
+  
+  [theme='dark-theme']{
+    --textColor: beige;
+    --onHover: plum;
+    --onSelectionHover: #b616b6;
+    --onLightSelectionHover: plum;
+    --onSelection: purple;
+    --onSelectionHoverText: white;
+    --unhighlighted: lightgray;
+    --hardUnhighlighted: azure;
+    --lightOutline: #d3d3d3;
+    --generalBackground: #30363d;
+    --clock: url('https://cdn-icons-png.flaticon.com/512/5910/5910421.png');
+  }
+  
+  body {
+  font-family: "Lucida Console", monospace;
+  user-select: none;
+  background-color: var(--generalBackground);
+  color: var(--textColor);
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--onHover);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--onSelectionHover);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--onSelectionHover);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+  
+  .slider.round {
+    border-radius: 14px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  input[type=time] {
+    color: var(--textColor);
+    background-color: var(--generalBackground);
+    font-size: 14px;
+    font-family: helvetica;
+    border: none;
+  }
+  
+  input[type="time"]::-webkit-calendar-picker-indicator{
+  background-image: var(--clock) ;
+  }
+  
+  .light-selected {
+    background-color: var(--onLightSelectionHover);
+    color: var(--innerTextColor);
+  }
+  
+  .selected {
+    background-color: var(--onSelection);
+    color: var(--onSelectionHoverText);
+  }
+  
+  .disabled{
+    pointer-events:none;
+    opacity: 0.4;
+  }
